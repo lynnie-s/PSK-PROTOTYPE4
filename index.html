@@ -755,50 +755,46 @@ document.addEventListener('DOMContentLoaded',()=>{
 </script>
 
 <!-- ── PSK 廣告 Popup ── -->
-<div id="popup-overlay" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.55);z-index:9999;align-items:center;justify-content:center;padding:1rem;">
-  <div id="popup-box" style="width:min(480px,94vw);background:#fff;border-radius:22px;overflow:hidden;position:relative;font-family:'Noto Sans TC',sans-serif;box-shadow:0 20px 60px rgba(0,0,0,0.3);display:flex;flex-direction:row;min-height:220px;">
+<div id="popup-overlay" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.55);z-index:9999;align-items:center;justify-content:center;padding:1.5rem;">
+  <div id="popup-box" style="width:min(420px,88vw);background:#fff;border-radius:20px;overflow:hidden;position:relative;font-family:'Noto Sans TC',sans-serif;box-shadow:0 20px 60px rgba(0,0,0,0.3);display:flex;flex-direction:row;max-height:85vh;">
 
     <!-- 關閉按鈕 -->
-    <button onclick="closePopup()" style="position:absolute;top:10px;right:12px;background:rgba(0,0,0,0.1);border:none;width:28px;height:28px;border-radius:50%;cursor:pointer;font-size:14px;color:#666;z-index:10;display:flex;align-items:center;justify-content:center;line-height:1;">✕</button>
+    <button onclick="closePopup()" style="position:absolute;top:10px;right:10px;background:rgba(0,0,0,0.1);border:none;width:26px;height:26px;border-radius:50%;cursor:pointer;font-size:13px;color:#666;z-index:10;display:flex;align-items:center;justify-content:center;">✕</button>
 
     <!-- 左側：白底產品圖 -->
-    <div style="width:min(120px,30vw);flex-shrink:0;background:#f9f7f4;display:flex;align-items:center;justify-content:center;padding:16px 12px;">
-      <img id="popup-prod-img" src="" style="width:100%;max-width:96px;height:auto;object-fit:contain;"/>
+    <div style="width:min(38vw,155px);flex-shrink:0;background:#f9f7f4;display:flex;align-items:center;justify-content:center;padding:min(3vw,16px);">
+      <img id="popup-prod-img" src="" style="width:100%;max-width:min(30vw,120px);height:auto;object-fit:contain;"/>
     </div>
 
-    <!-- 右側：金黃背景內容 -->
-    <div style="flex:1;background:linear-gradient(145deg,#fff8d6,#ffd95a);display:flex;flex-direction:column;justify-content:center;padding:22px 18px 18px;position:relative;overflow:hidden;min-width:0;">
-
-      <!-- 裝飾圓圈 -->
-      <div style="position:absolute;top:-50px;right:-50px;width:130px;height:130px;border-radius:50%;background:rgba(255,255,255,0.2);pointer-events:none;"></div>
-      <div style="position:absolute;bottom:-40px;left:-30px;width:100px;height:100px;border-radius:50%;background:rgba(255,255,255,0.15);pointer-events:none;"></div>
+    <!-- 右側：金黃內容 -->
+    <div style="flex:1;background:linear-gradient(145deg,#fff8d6,#ffd95a);display:flex;flex-direction:column;justify-content:center;padding:min(4vw,18px) min(4vw,16px);position:relative;overflow:hidden;min-width:0;">
+      <div style="position:absolute;top:-40px;right:-40px;width:100px;height:100px;border-radius:50%;background:rgba(255,255,255,0.2);pointer-events:none;"></div>
 
       <!-- 標籤 -->
-      <div style="display:inline-block;background:rgba(255,255,255,0.55);border-radius:99px;padding:3px 12px;font-size:10px;font-weight:700;color:#a06000;letter-spacing:0.1em;margin-bottom:8px;width:fit-content;">☀️ PSK 專屬優惠</div>
+      <div style="display:inline-block;background:rgba(255,255,255,0.6);border-radius:99px;padding:2px 10px;font-size:min(2.5vw,10px);font-weight:700;color:#a06000;margin-bottom:min(1.5vw,7px);width:fit-content;">☀️ PSK 專屬優惠</div>
 
       <!-- 標題 -->
-      <div style="font-size:clamp(18px,4.5vw,24px);font-weight:800;color:#5c3300;line-height:1.2;margin-bottom:4px;">限時專屬折扣</div>
+      <div style="font-size:min(5vw,20px);font-weight:800;color:#5c3300;line-height:1.2;margin-bottom:3px;">限時專屬折扣</div>
 
       <!-- 副標 -->
-      <div id="popup-sub" style="font-size:clamp(11px,2.5vw,13px);color:#8a5800;margin-bottom:14px;line-height:1.5;"></div>
+      <div id="popup-sub" style="font-size:min(3vw,12px);color:#8a5800;margin-bottom:min(2.5vw,12px);line-height:1.4;"></div>
 
       <!-- 折扣碼 -->
-      <div style="background:rgba(255,255,255,0.7);border-radius:10px;border:1.5px dashed #d4900a;padding:9px 13px;display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:5px;">
+      <div style="background:rgba(255,255,255,0.7);border-radius:9px;border:1.5px dashed #d4900a;padding:min(2vw,9px) min(2.5vw,11px);display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:4px;">
         <div style="min-width:0;">
-          <div style="font-size:9px;color:#9a6800;margin-bottom:2px;letter-spacing:0.06em;">專屬折扣碼</div>
-          <div id="popup-code" style="font-family:'Courier New',monospace;font-size:clamp(13px,3.5vw,16px);font-weight:700;color:#7a4400;letter-spacing:0.1em;white-space:nowrap;"></div>
+          <div style="font-size:min(2vw,9px);color:#9a6800;margin-bottom:1px;letter-spacing:0.05em;">專屬折扣碼</div>
+          <div id="popup-code" style="font-family:'Courier New',monospace;font-size:min(3.8vw,15px);font-weight:700;color:#7a4400;letter-spacing:0.08em;white-space:nowrap;"></div>
         </div>
-        <button onclick="copyPopupCode()" id="copy-btn" style="background:#c47000;color:#fff;border:none;border-radius:8px;padding:7px 13px;font-size:11px;font-weight:700;cursor:pointer;white-space:nowrap;flex-shrink:0;transition:all .2s;">複製</button>
+        <button onclick="copyPopupCode()" id="copy-btn" style="background:#c47000;color:#fff;border:none;border-radius:7px;padding:min(1.5vw,7px) min(2.5vw,11px);font-size:min(2.8vw,11px);font-weight:700;cursor:pointer;white-space:nowrap;flex-shrink:0;">複製</button>
       </div>
 
-      <div id="copy-msg" style="font-size:10px;color:#8a5800;height:13px;margin-bottom:6px;text-align:center;"></div>
+      <div id="copy-msg" style="font-size:min(2.5vw,10px);color:#8a5800;height:12px;margin-bottom:min(1.5vw,6px);text-align:center;"></div>
 
       <!-- CTA -->
-      <button onclick="goShopPopup()" id="popup-cta" style="width:100%;background:#c47000;color:#fff;border:none;border-radius:10px;padding:12px;font-size:clamp(13px,3vw,14px);font-weight:700;cursor:pointer;letter-spacing:0.05em;transition:all .2s;box-shadow:0 3px 12px rgba(160,80,0,0.3);" onmouseover="this.style.background='#a35800';this.style.transform='translateY(-1px)'" onmouseout="this.style.background='#c47000';this.style.transform='translateY(0)'">立即選購 →</button>
+      <button onclick="goShopPopup()" id="popup-cta" style="width:100%;background:#c47000;color:#fff;border:none;border-radius:9px;padding:min(2.5vw,11px);font-size:min(3.5vw,13px);font-weight:700;cursor:pointer;letter-spacing:0.04em;transition:all .2s;" onmouseover="this.style.background='#a35800'" onmouseout="this.style.background='#c47000'">立即選購 →</button>
 
-      <p style="text-align:center;margin:6px 0 0;font-size:9px;color:rgba(90,50,0,0.5);">結帳時輸入折扣碼即可享優惠</p>
+      <p style="text-align:center;margin:5px 0 0;font-size:min(2vw,9px);color:rgba(90,50,0,0.45);">結帳時輸入折扣碼即可享優惠</p>
     </div>
-
   </div>
 </div>
 </body>
