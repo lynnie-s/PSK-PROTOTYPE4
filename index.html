@@ -742,14 +742,23 @@ function showPopupAfterDelay(){
   },10000);
 }
 
+
+function minimizePopup(){
+  document.getElementById('popup-overlay').style.display='none';
+  document.getElementById('popup-mini').style.display='block';
+}
+function expandPopup(){
+  document.getElementById('popup-mini').style.display='none';
+  document.getElementById('popup-overlay').style.display='flex';
+}
+
 function closePopup(){
-  const o=document.getElementById('popup-overlay');
-  if(o)o.style.display='none';
+  minimizePopup();
 }
 
 document.addEventListener('DOMContentLoaded',()=>{
   const o=document.getElementById('popup-overlay');
-  if(o)o.addEventListener('click',e=>{if(e.target===o)closePopup();});
+  if(o)o.addEventListener('click',e=>{if(e.target===o)minimizePopup();});
 });
 
 </script>
@@ -795,6 +804,13 @@ document.addEventListener('DOMContentLoaded',()=>{
 
       <p style="text-align:center;margin:5px 0 0;font-size:min(2vw,9px);color:rgba(90,50,0,0.45);">結帳時輸入折扣碼即可享優惠</p>
     </div>
+  </div>
+</div>
+
+<!-- ── 縮小版廣告泡泡 ── -->
+<div id="popup-mini" onclick="expandPopup()" style="display:none;position:fixed;bottom:24px;right:20px;z-index:9999;cursor:pointer;">
+  <div style="background:linear-gradient(135deg,#ffd95a,#c47000);width:76px;height:76px;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(180,100,0,0.4);animation:pulse 2s infinite;">
+    <div style="font-size:13px;font-weight:800;color:#fff;text-align:center;line-height:1.4;letter-spacing:0.05em;">折扣碼<br>一鍵領</div>
   </div>
 </div>
 </body>
