@@ -558,7 +558,7 @@ function showWhiteResult(){
     <div class="divider"></div>
     <div class="sec-label">為你推薦</div>
     <div class="product-card">
-      <img src="${r.prodImg}" style="width:120px;height:120px;object-fit:contain;border-radius:var(--r-md);flex-shrink:0;" alt="product">
+      <a href="https://www.psk.com.tw/categories/%E9%98%B2%E6%9B%AC%E5%BA%95%E5%A6%9D" target="_blank" style="flex-shrink:0;display:block;"><img src="${r.prodImg}" style="width:120px;height:120px;object-fit:contain;border-radius:var(--r-md);display:block;" alt="product"></a>
       <div>
         <div class="prod-title">PSK ${r.prod}</div>
         <div class="prod-sub">${r.prodDesc}</div>
@@ -613,7 +613,7 @@ function showFinalResult(){
     <div class="divider"></div>
     <div class="sec-label">為你推薦</div>
     <div class="product-card">
-      <img src="${r.prodImg}" style="width:120px;height:120px;object-fit:contain;border-radius:var(--r-md);flex-shrink:0;" alt="product">
+      <a href="https://www.psk.com.tw/categories/%E9%98%B2%E6%9B%AC%E5%BA%95%E5%A6%9D" target="_blank" style="flex-shrink:0;display:block;"><img src="${r.prodImg}" style="width:120px;height:120px;object-fit:contain;border-radius:var(--r-md);display:block;" alt="product"></a>
       <div>
         <div class="prod-title">PSK ${r.prod}</div>
         <div class="prod-sub">${r.prodDesc}</div>
@@ -756,14 +756,14 @@ document.addEventListener('DOMContentLoaded',()=>{
 
 <!-- ── PSK 廣告 Popup ── -->
 <div id="popup-overlay" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.55);z-index:9999;align-items:center;justify-content:center;padding:1.5rem;">
-  <div id="popup-box" style="width:min(420px,88vw);background:#fff;border-radius:20px;overflow:hidden;position:relative;font-family:'Noto Sans TC',sans-serif;box-shadow:0 20px 60px rgba(0,0,0,0.3);display:flex;flex-direction:row;max-height:min(300px,55vw);">
+  <div id="popup-box" style="width:min(420px,88vw);background:#fff;border-radius:20px;overflow:hidden;position:relative;font-family:'Noto Sans TC',sans-serif;box-shadow:0 20px 60px rgba(0,0,0,0.3);display:flex;flex-direction:row;">
 
     <!-- 關閉按鈕 -->
     <button onclick="closePopup()" style="position:absolute;top:10px;right:10px;background:rgba(0,0,0,0.1);border:none;width:26px;height:26px;border-radius:50%;cursor:pointer;font-size:13px;color:#666;z-index:10;display:flex;align-items:center;justify-content:center;">✕</button>
 
     <!-- 左側：白底產品圖 -->
-    <div style="width:min(28vw,110px);flex-shrink:0;background:#f9f7f4;display:flex;align-items:center;justify-content:center;padding:8px;">
-      <img id="popup-prod-img" src="" style="width:90%;height:90%;object-fit:contain;object-position:center;"/>
+    <div style="width:min(36vw,150px);flex-shrink:0;background:#f9f7f4;display:flex;align-items:center;justify-content:center;padding:12px 10px;">
+      <img id="popup-prod-img" src="" style="width:100%;height:100%;object-fit:contain;display:block;"/>
     </div>
 
     <!-- 右側：金黃內容 -->
@@ -771,19 +771,19 @@ document.addEventListener('DOMContentLoaded',()=>{
       <div style="position:absolute;top:-40px;right:-40px;width:100px;height:100px;border-radius:50%;background:rgba(255,255,255,0.2);pointer-events:none;"></div>
 
       <!-- 標籤 -->
-      <div style="display:inline-block;background:rgba(255,255,255,0.6);border-radius:99px;padding:2px 10px;font-size:min(2.5vw,10px);font-weight:700;color:#a06000;margin-bottom:min(1.5vw,7px);width:fit-content;">☀️ PSK 專屬優惠</div>
+      <div style="display:inline-block;background:rgba(255,255,255,0.6);border-radius:99px;padding:3px 12px;font-size:min(3vw,12px);font-weight:700;color:#a06000;margin-bottom:min(1.5vw,8px);width:fit-content;">☀️ PSK 專屬優惠</div>
 
       <!-- 標題 -->
-      <div style="font-size:min(5vw,20px);font-weight:800;color:#5c3300;line-height:1.2;margin-bottom:3px;">限時專屬折扣</div>
+      <div style="font-size:min(6vw,24px);font-weight:800;color:#5c3300;line-height:1.2;margin-bottom:4px;">限時專屬折扣</div>
 
       <!-- 副標 -->
-      <div id="popup-sub" style="font-size:min(3vw,12px);color:#8a5800;margin-bottom:min(2.5vw,12px);line-height:1.4;"></div>
+      <div id="popup-sub" style="font-size:min(3.5vw,14px);color:#8a5800;margin-bottom:min(2.5vw,12px);line-height:1.4;"></div>
 
       <!-- 折扣碼 -->
       <div style="background:rgba(255,255,255,0.7);border-radius:9px;border:1.5px dashed #d4900a;padding:min(2vw,9px) min(2.5vw,11px);display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:4px;">
         <div style="min-width:0;">
           <div style="font-size:min(2vw,9px);color:#9a6800;margin-bottom:1px;letter-spacing:0.05em;">專屬折扣碼</div>
-          <div id="popup-code" style="font-family:'Courier New',monospace;font-size:min(3.8vw,15px);font-weight:700;color:#7a4400;letter-spacing:0.08em;white-space:nowrap;"></div>
+          <div id="popup-code" style="font-family:'Courier New',monospace;font-size:min(4.5vw,18px);font-weight:700;color:#7a4400;letter-spacing:0.08em;white-space:nowrap;"></div>
         </div>
         <button onclick="copyPopupCode()" id="copy-btn" style="background:#c47000;color:#fff;border:none;border-radius:7px;padding:min(1.5vw,7px) min(2.5vw,11px);font-size:min(2.8vw,11px);font-weight:700;cursor:pointer;white-space:nowrap;flex-shrink:0;">複製</button>
       </div>
@@ -791,7 +791,7 @@ document.addEventListener('DOMContentLoaded',()=>{
       <div id="copy-msg" style="font-size:min(2.5vw,10px);color:#8a5800;height:12px;margin-bottom:min(1.5vw,6px);text-align:center;"></div>
 
       <!-- CTA -->
-      <button onclick="goShopPopup()" id="popup-cta" style="width:100%;background:#c47000;color:#fff;border:none;border-radius:9px;padding:min(2.5vw,11px);font-size:min(3.5vw,13px);font-weight:700;cursor:pointer;letter-spacing:0.04em;transition:all .2s;" onmouseover="this.style.background='#a35800'" onmouseout="this.style.background='#c47000'">立即選購 →</button>
+      <button onclick="goShopPopup()" id="popup-cta" style="width:100%;background:#c47000;color:#fff;border:none;border-radius:9px;padding:min(3vw,13px);font-size:min(4vw,15px);font-weight:700;cursor:pointer;letter-spacing:0.04em;transition:all .2s;" onmouseover="this.style.background='#a35800'" onmouseout="this.style.background='#c47000'">立即選購 →</button>
 
       <p style="text-align:center;margin:5px 0 0;font-size:min(2vw,9px);color:rgba(90,50,0,0.45);">結帳時輸入折扣碼即可享優惠</p>
     </div>
