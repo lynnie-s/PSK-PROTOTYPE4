@@ -756,14 +756,14 @@ document.addEventListener('DOMContentLoaded',()=>{
 
 <!-- ── PSK 廣告 Popup ── -->
 <div id="popup-overlay" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.55);z-index:9999;align-items:center;justify-content:center;padding:1.5rem;">
-  <div id="popup-box" style="width:min(420px,88vw);background:#fff;border-radius:20px;overflow:hidden;position:relative;font-family:'Noto Sans TC',sans-serif;box-shadow:0 20px 60px rgba(0,0,0,0.3);display:flex;flex-direction:row;max-height:85vh;">
+  <div id="popup-box" style="width:min(420px,88vw);background:#fff;border-radius:20px;overflow:hidden;position:relative;font-family:'Noto Sans TC',sans-serif;box-shadow:0 20px 60px rgba(0,0,0,0.3);display:flex;flex-direction:row;max-height:min(300px,55vw);">
 
     <!-- 關閉按鈕 -->
     <button onclick="closePopup()" style="position:absolute;top:10px;right:10px;background:rgba(0,0,0,0.1);border:none;width:26px;height:26px;border-radius:50%;cursor:pointer;font-size:13px;color:#666;z-index:10;display:flex;align-items:center;justify-content:center;">✕</button>
 
     <!-- 左側：白底產品圖 -->
     <div style="width:min(28vw,110px);flex-shrink:0;background:#f9f7f4;display:flex;align-items:center;justify-content:center;padding:min(2vw,10px);">
-      <img id="popup-prod-img" src="" style="width:100%;max-width:min(22vw,88px);height:auto;object-fit:contain;"/>
+      <img id="popup-prod-img" src="" style="width:100%;max-width:min(22vw,88px);max-height:min(35vw,140px);height:auto;object-fit:contain;"/>
     </div>
 
     <!-- 右側：金黃內容 -->
